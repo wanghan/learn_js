@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>JS loan calculator</title>
+        <script src="./loanCalculator.js" charset="utf-8"></script>
+    </head>
+    
+    <body>
+        <table>
+            <!--
+                tr: row
+                th: header
+                td: cell
+            -->
+            <tr>
+                <th>Enter Loan Data:</th>
+                <td></td>
+                <th>Load Balance, Cumulative Equity, and Interest Payments</th>
+            </tr>
+            <tr>
+                <td>Amount of the loan ($): </td>
+                <td><input id="amount" onchange="calculate();"></td>
+                <td rowspan=8><canvas id="graph" width="400" height="250"></canvas></td>
+            </tr>
+            <tr>
+                <td>Annual interest (%):</td>
+                <td><input id="interest" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>Repayment period (years):</td>
+                <td><input id="repayment" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>Zipcode (to find leaders):</td>
+                <td><input id="zipcode" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>Approximate Payments:</td>
+                <td><button id="calculate" onclick="calculate();">Calculate</button></td>
+            </tr>
+            <tr>
+                <td>Monthly payment:</td>
+                <td><label id="payment">$</label></td>
+            </tr>
+            <tr>
+                <td>Total payment:</td>
+                <td><label id="total">$</label></td>
+            </tr>
+            <tr>
+                <td>Total interest:</td>
+                <td><label id="totalinterest">$</label></td>
+            </tr>
+        </table>
+    </body>
+</html>
