@@ -1,4 +1,5 @@
 function calculate() {
+
     // look up the input and output element
     var amount = document.getElementById("amount");
     var inter = document.getElementById("interest");
@@ -23,7 +24,7 @@ function calculate() {
         total.innerHTML = (monthly * payments).toFixed(2)
         totalinterest.innerHTML = ((monthly * payments) - principle).toFixed(2);
 
-        //TODO: Save the user's input
+        // save the input to local storage
         save(amount.value, inter.value, months.value, zipcode.value);
     } else {
         payment.innerHTML = "";
@@ -45,7 +46,7 @@ function save(amount, intes, years, zipcode) {
 }
 
 // Restore local storage when document first loads.
-window.onload = function() {
+window.onload = function () {
     if (window.localStorage && window.localStorage.loan_amount) {
         document.getElementById("amount").value = window.localStorage.loan_amount;
         document.getElementById("interest").value = window.localStorage.loan_interest;
