@@ -2,6 +2,9 @@
 <head>
 <script language="javascript" type="text/javascript" src="class_factory.js"></script>
 <script language="javascript" type="text/javascript">
+
+    // example 1: extend and include
+
     var Person = new Class;
     Person.extend(
     {
@@ -12,6 +15,8 @@
     Person.include({
         name: "tom"
     });
+
+    //example 2: inheritance
 
     var Animal = new Class;
 
@@ -25,6 +30,21 @@
 
     var tommy = new Cat;
     tommy.breath();
+
+    //example 3: proxy function
+
+    var Button = new Class;
+
+    Button.include({
+        init: function (element) {
+            this.element = element;
+
+            this.element.click(this.proxy(this.click));
+            // or this.element.click(this.click.bind(this));
+        },
+
+        click: function () { console.log("clicking") }
+    });
 
 </script>
 </head>

@@ -50,6 +50,14 @@ var Class = function (parent) {
         if (included) included(_class);
     }
 
+    //adding a proxy function
+    _class.proxy = function (func) {
+        var self = this;
+        return (function () {
+            return func.apply(self, arguments);
+        });
+    }
+
     //#endregion
 
     return _class;
