@@ -6,12 +6,25 @@
     Person.extend(
     {
         get_name: function () { if (this.fn.name) { return this.fn.name; } },
-        extended: function (_class) { alert("_class was extended!") }
+        extended: function (_class) { console.log("_class was extended!") }
     });
 
     Person.include({
         name: "tom"
     });
+
+    var Animal = new Class;
+
+    Animal.include({
+        breath: function () {
+            console.log('breath');
+        }
+    });
+
+    var Cat = new Class(Animal);
+
+    var tommy = new Cat;
+    tommy.breath();
 
 </script>
 </head>
