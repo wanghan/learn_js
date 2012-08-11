@@ -1,0 +1,20 @@
+<html>
+<head>
+<script language="javascript" type="text/javascript" src="class_factory.js"></script>
+<script language="javascript" type="text/javascript">
+    var Person = new Class;
+    Person.extend(
+    {
+        get_name: function () { if (this.fn.name) { return this.fn.name; } },
+        extended: function (_class) { alert("_class was extended!") }
+    });
+
+    Person.include({
+        name: "tom"
+    });
+
+</script>
+</head>
+<body>
+</body>
+</html>
